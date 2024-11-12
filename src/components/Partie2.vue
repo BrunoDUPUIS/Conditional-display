@@ -2,26 +2,26 @@
 import { ref } from 'vue'
 
 const like = ref(true)
-const likeYes = () => {
-  like.value = false
-}
-const likeNo = () => {
-  like.value = true
-}
 </script>
 <template>
-  <p v-if="like === true" @click="likeYes" class="green">
-    <font-awesome-icon :icon="['fas', 'thumbs-up']" />
-  </p>
-  <br />
-  <p v-if="like === false" @click="likeNo" class="red">
-    <font-awesome-icon :icon="['fas', 'thumbs-down']" />
-  </p>
+  <font-awesome-icon
+    :icon="['fas', 'thumbs-up']"
+    v-show="like"
+    @click="like = false"
+    class="green"
+  />
+
+  <font-awesome-icon
+    :icon="['fas', 'thumbs-down']"
+    v-show="!like"
+    @click="like = true"
+    class="red"
+  />
 </template>
 <style scoped>
 svg {
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .green {
   color: green;
