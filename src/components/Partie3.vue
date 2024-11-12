@@ -15,10 +15,10 @@ const raz = () => {
 </script>
 <template>
   <div>
-    <p v-if="initialValue <= 0">😱 Mon porte monnaie est vide</p>
-    <p v-if="initialValue === 1">Mon premier euro 🤩</p>
-    <p v-if="initialValue > 10 && initialValue <= 30">Yes, plus de 10 €</p>
-    <p v-if="initialValue > 30">🍾 Ca y est je suis riche !! 🍾</p>
+    <p v-if="initialValue === 0">😱 Mon porte monnaie est vide</p>
+    <p v-else-if="initialValue === 1">Mon premier euro 🤩</p>
+    <p v-else-if="initialValue > 30">🍾 Ca y est je suis riche !! 🍾</p>
+    <p v-else-if="initialValue > 10">Yes, plus de 10 €</p>
   </div>
   <br />
   <div>
